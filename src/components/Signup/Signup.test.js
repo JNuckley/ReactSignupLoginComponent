@@ -1,7 +1,7 @@
 /* global it, expect, describe, jest */
 
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow } from '../../../node_modules/enzyme';
 import Signup from './Signup';
 
 describe('the signup form', () => {

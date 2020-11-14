@@ -3,8 +3,8 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import ReactSignupLoginComponent from './ReactSignupLoginComponent';
-import Login from './Login';
-import Signup from './Signup';
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 
 describe('the main wrapper', () => {
   const requiredMockProps = {

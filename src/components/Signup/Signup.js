@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import PropTypes from '../../../node_modules/prop-types';
+import React from '../../../node_modules/react';
 
 const localStyles = {
   wrapper: {

@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import Login from './Login';
-import Signup from './Signup';
-import RecoverPassword from './RecoverPassword';
+import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
+import RecoverPassword from '../RecoverPassword/RecoverPassword';
 
 // Our only css dependency
-import './normalize.css';
+import '../normalize.css';
 
 class ReactSignupLoginComponent extends React.Component {
   constructor(props) {
@@ -97,7 +97,7 @@ class ReactSignupLoginComponent extends React.Component {
             submitLoginCustomLabel={this.props.submitLoginCustomLabel}
           />
         );
-      } else if (!this.state.isLogin && !this.state.isRecoveringPassword) {
+      } if (!this.state.isLogin && !this.state.isRecoveringPassword) {
         return (
           <Signup
             key="signup-form"
