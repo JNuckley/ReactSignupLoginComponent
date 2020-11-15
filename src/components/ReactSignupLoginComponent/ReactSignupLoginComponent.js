@@ -6,7 +6,7 @@ import Signup from '../Signup/Signup';
 import RecoverPassword from '../RecoverPassword/RecoverPassword';
 
 // Our only css dependency
-import '../normalize.css';
+// import '../normalize.css';
 
 class ReactSignupLoginComponent extends React.Component {
   constructor(props) {

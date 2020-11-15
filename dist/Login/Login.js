@@ -1,56 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
-var localStyles = {
-  wrapper: {
-    backfaceVisibility: 'hidden',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: 2,
-    transform: 'rotateY(0deg)',
-    width: '100%'
-  },
-  inputWrapper: {
-    display: 'flex',
-    flexFlow: 'row wrap',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  buttonsWrapper: {
-    display: 'flex',
-    flexFlow: 'row wrap',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  input: {
-    width: 344,
-    height: 40,
-    margin: '15px 0'
-  },
-  recoverPasswordWrapper: {
-    width: '100%',
-    display: 'flex',
-    flexFlow: 'row wrap',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  recoverPassword: {
-    textAlign: 'center',
-    cursor: 'pointer',
-    margin: '20px 0',
-    padding: 15
-  },
-  button: {
-    margin: '0 15px',
-    padding: 15
-  }
-};
+import './Login.css';
 
 var Login = function Login(_ref) {
   var handleShowSignup = _ref.handleShowSignup,
       handleShowRecover = _ref.handleShowRecover,
-      styles = _ref.styles,
       handleLogin = _ref.handleLogin,
       handleChange = _ref.handleChange,
       username = _ref.username,
@@ -62,12 +16,12 @@ var Login = function Login(_ref) {
       submitLoginCustomLabel = _ref.submitLoginCustomLabel;
   return React.createElement(
     'section',
-    { id: 'login-form', style: Object.assign({}, localStyles.wrapper, styles.wrapper) },
+    { id: 'login-form' },
     React.createElement(
       'div',
-      { id: 'fields', style: Object.assign({}, localStyles.inputWrapper, styles.inputWrapper) },
+      { id: 'fields' },
       React.createElement('input', {
-        style: Object.assign({}, localStyles.input, styles.input),
+        className: 'inputBox',
         type: 'text',
         id: 'username',
         name: 'username',
@@ -78,7 +32,7 @@ var Login = function Login(_ref) {
         value: username
       }),
       React.createElement('input', {
-        style: Object.assign({}, localStyles.input, styles.input),
+        className: 'inputBox',
         type: 'password',
         id: 'password',
         name: 'password',
@@ -91,18 +45,18 @@ var Login = function Login(_ref) {
     ),
     React.createElement(
       'div',
-      { style: Object.assign({}, localStyles.buttonsWrapper, styles.buttonsWrapper) },
+      { className: 'buttonsWrapper' },
       React.createElement(
         'div',
         {
-          style: Object.assign({}, localStyles.recoverPasswordWrapper, styles.recoverPasswordWrapper)
+          className: 'recoverPasswordWrapper'
         },
         React.createElement(
           'button',
           {
-            id: 'recorver-password',
+            id: 'recover-password',
+            className: 'button',
             type: 'button',
-            style: Object.assign({}, localStyles.recoverPassword, styles.recoverPasswordButton),
             onClick: function onClick() {
               handleShowRecover('isRecoveringPassword', true);
             }
@@ -115,7 +69,7 @@ var Login = function Login(_ref) {
         {
           id: 'signup-button',
           type: 'button',
-          style: Object.assign({}, localStyles.button, styles.button),
+          className: 'button',
           onClick: function onClick() {
             handleShowSignup('isLogin', false);
           }
@@ -127,7 +81,7 @@ var Login = function Login(_ref) {
         name: 'submit-login',
         value: submitLoginCustomLabel,
         type: 'submit',
-        style: Object.assign({}, localStyles.button, styles.button),
+        className: 'button',
         onClick: handleLogin
       })
     )
@@ -141,15 +95,15 @@ Login.propTypes = {
   handleChange: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
-  styles: PropTypes.shape({
-    wrapper: PropTypes.object,
-    inputWrapper: PropTypes.object,
-    buttonsWrapper: PropTypes.object,
-    input: PropTypes.object,
-    recoverPasswordWrapper: PropTypes.object,
-    recoverPasswordButton: PropTypes.object,
-    button: PropTypes.object
-  }),
+  // styles: PropTypes.shape({
+  //   wrapper: PropTypes.object,
+  //   inputWrapper: PropTypes.object,
+  //   buttonsWrapper: PropTypes.object,
+  //   input: PropTypes.object,
+  //   recoverPasswordWrapper: PropTypes.object,
+  //   recoverPasswordButton: PropTypes.object,
+  //   button: PropTypes.object,
+  // }),
   usernameCustomLabel: PropTypes.string.isRequired,
   passwordCustomLabel: PropTypes.string.isRequired,
   recoverPasswordCustomLabel: PropTypes.string.isRequired,
@@ -157,8 +111,8 @@ Login.propTypes = {
   submitLoginCustomLabel: PropTypes.string.isRequired
 };
 
-Login.defaultProps = {
-  styles: {}
-};
+// Login.defaultProps = {
+//   styles: {},
+// };
 
 export default Login;

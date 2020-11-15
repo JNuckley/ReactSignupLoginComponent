@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div className="loginWrapper">
       <ReactSignupLoginComponent
-        title="My awesome company"
+        title="Nuckley Website"
         handleSignup={signupWasClickedCallback}
         handleLogin={loginWasClickedCallback}
         handleRecoverPassword={recoverPasswordWasClickedCallback}

@@ -16,7 +16,7 @@ import Signup from '../Signup/Signup';
 import RecoverPassword from '../RecoverPassword/RecoverPassword';
 
 // Our only css dependency
-import '../normalize.css';
+// import '../normalize.css';
 
 var ReactSignupLoginComponent = function (_React$Component) {
   _inherits(ReactSignupLoginComponent, _React$Component);

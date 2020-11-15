@@ -1,56 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-
-const localStyles = {
-  wrapper: {
-    backfaceVisibility: 'hidden',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: 2,
-    transform: 'rotateY(0deg)',
-    width: '100%',
-  },
-  inputWrapper: {
-    display: 'flex',
-    flexFlow: 'row wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonsWrapper: {
-    display: 'flex',
-    flexFlow: 'row wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  input: {
-    width: 344,
-    height: 40,
-    margin: '15px 0',
-  },
-  recoverPasswordWrapper: {
-    width: '100%',
-    display: 'flex',
-    flexFlow: 'row wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  recoverPassword: {
-    textAlign: 'center',
-    cursor: 'pointer',
-    margin: '20px 0',
-    padding: 15,
-  },
-  button: {
-    margin: '0 15px',
-    padding: 15,
-  },
-};
+import './Login.css';
 
 const Login = ({
   handleShowSignup,
   handleShowRecover,
-  styles,
   handleLogin,
   handleChange,
   username,
@@ -61,10 +15,10 @@ const Login = ({
   goToSignupCustomLabel,
   submitLoginCustomLabel,
 }) => (
-  <section id="login-form" style={Object.assign({}, localStyles.wrapper, styles.wrapper)}>
-    <div id="fields" style={Object.assign({}, localStyles.inputWrapper, styles.inputWrapper)}>
+  <section id="login-form">
+    <div id="fields">
       <input
-        style={Object.assign({}, localStyles.input, styles.input)}
+        className="inputBox"
         type="text"
         id="username"
         name="username"
@@ -73,7 +27,7 @@ const Login = ({
         value={username}
       />
       <input
-        style={Object.assign({}, localStyles.input, styles.input)}
+        className="inputBox"
         type="password"
         id="password"
         name="password"
@@ -82,14 +36,14 @@ const Login = ({
         value={password}
       />
     </div>
-    <div style={Object.assign({}, localStyles.buttonsWrapper, styles.buttonsWrapper)}>
+    <div className="buttonsWrapper">
       <div
-        style={Object.assign({}, localStyles.recoverPasswordWrapper, styles.recoverPasswordWrapper)}
+        className="recoverPasswordWrapper"
       >
         <button
-          id="recorver-password"
+          id="recover-password"
+          className="button"
           type="button"
-          style={Object.assign({}, localStyles.recoverPassword, styles.recoverPasswordButton)}
           onClick={() => {
             handleShowRecover('isRecoveringPassword', true);
           }}
@@ -100,7 +54,7 @@ const Login = ({
       <button
         id="signup-button"
         type="button"
-        style={Object.assign({}, localStyles.button, styles.button)}
+        className="button"
         onClick={() => {
           handleShowSignup('isLogin', false);
         }}
@@ -112,7 +66,7 @@ const Login = ({
         name="submit-login"
         value={submitLoginCustomLabel}
         type="submit"
-        style={Object.assign({}, localStyles.button, styles.button)}
+        className="button"
         onClick={handleLogin}
       />
     </div>
@@ -126,15 +80,15 @@ Login.propTypes = {
   handleChange: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
-  styles: PropTypes.shape({
-    wrapper: PropTypes.object,
-    inputWrapper: PropTypes.object,
-    buttonsWrapper: PropTypes.object,
-    input: PropTypes.object,
-    recoverPasswordWrapper: PropTypes.object,
-    recoverPasswordButton: PropTypes.object,
-    button: PropTypes.object,
-  }),
+  // styles: PropTypes.shape({
+  //   wrapper: PropTypes.object,
+  //   inputWrapper: PropTypes.object,
+  //   buttonsWrapper: PropTypes.object,
+  //   input: PropTypes.object,
+  //   recoverPasswordWrapper: PropTypes.object,
+  //   recoverPasswordButton: PropTypes.object,
+  //   button: PropTypes.object,
+  // }),
   usernameCustomLabel: PropTypes.string.isRequired,
   passwordCustomLabel: PropTypes.string.isRequired,
   recoverPasswordCustomLabel: PropTypes.string.isRequired,
@@ -142,8 +96,8 @@ Login.propTypes = {
   submitLoginCustomLabel: PropTypes.string.isRequired,
 };
 
-Login.defaultProps = {
-  styles: {},
-};
+// Login.defaultProps = {
+//   styles: {},
+// };
 
 export default Login;

@@ -1,0 +1,49 @@
+#login-form {
+    /* Visibility: hidden; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-Index: 2;
+    transform: rotateY(0deg);
+    width: 100%;
+  }
+
+  #fields {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttonsWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .inputBox {
+    width: 344px;
+    height: 40px;
+    margin: 15px 0;
+  }
+
+  .recoverPasswordWrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #recoverPassword {
+    align-items: center;
+    cursor: pointer;
+    margin: 20px 0;
+    padding: 15px;
+  }
+
+  .button {
+    margin: 15px 15px;
+    padding: 15px;
+  }
